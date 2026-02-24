@@ -1,24 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   operation_swap.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 17:58:07 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/22 17:58:07 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/02/24 17:03:22 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void    swap_stack(t_stack **stack)
+static void    swap(t_stack **head)
 {
     t_stack    *tmp;
 
-    tmp = stack->next;
-    (*stack)->next = tmp->next;
-    tmp->next = *stack;
-    *stack = tmp;
-
+    if (!*head || !((*head)->next))
+        return ;
+    tmp = (*head)->next; 
+    (*head)->next = tmp->next;
+    tmp->next = *head;
+    *head = tmp;
 }
+
+void    swap_a(t_stack **a)
+{
+    swap(a);
+    write(1, "sa\n", 3);
+}
+
+void    swap_b(t_stack **b)
+{
+    swap(b);
+    write(1, "sb\n", 3);
+}
+
+void    swap_ab(t_stack **a, t_stack **b)
+{
+    swap(a);
+    swap(b);
+    write(1, "ss\n", 3);
+}
+
