@@ -6,8 +6,19 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:14:39 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/24 17:03:23 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/02/26 20:42:26 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+
+
+int main(int argc, char **argv)
+{
+    int a =2;
+    if (argc < 2)
+        return (0);
+    if ()
+    return (0);
+}

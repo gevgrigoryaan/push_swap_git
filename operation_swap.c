@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 17:58:07 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/24 17:03:22 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/02/26 20:22:03 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ static void    swap(t_stack **head)
     *head = tmp;
 }
 
-void    swap_a(t_stack **a)
+void    sa(t_stack **a)
 {
     swap(a);
     write(1, "sa\n", 3);
 }
 
-void    swap_b(t_stack **b)
+void    sb(t_stack **b)
 {
     swap(b);
     write(1, "sb\n", 3);
 }
 
-void    swap_ab(t_stack **a, t_stack **b)
+void    ss(t_stack **a, t_stack **b)
 {
     swap(a);
     swap(b);

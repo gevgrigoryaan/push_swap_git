@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 18:33:23 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/24 19:57:15 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/02/26 20:22:03 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,18 +30,18 @@ static void    r_rotate(t_stack **head)
     *head = tail;
 }
 
-void    r_rotate_a(t_stack **a)
+void    rra(t_stack **a)
 {
     r_rotate(a);
     write(1, "rra\n", 4);
 }
 
-void    r_rotate_b(t_stack **b)
+void    rrb(t_stack **b)
 {
     r_rotate(b);
     write(1, "rrb\n", 4);
 }
-void    r_rotate_ab(t_stack **a, t_stack **b)
+void    rrr(t_stack **a, t_stack **b)
 {
     r_rotate(a);
     r_rotate(b);

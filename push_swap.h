@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/24 17:03:25 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/02/26 20:25:54 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,26 @@ typedef struct s_stack
 
 /* operations */
 
-void    swap_a(t_stack **a);
-void    swap_b(t_stack **b);
-void    swap_ab(t_stack **a, t_stack **b);
-void    push_a(t_stack **b, t_stack **a);
-void    push_b(t_stack **a, t_stack **b);
-void    rotate_a(t_stack **a);
-void    rotate_b(t_stack **b);
-void    rotate_ab(t_stack **a, t_stack **b);
-void	r_rotate_a(t_stack **a);
-void	r_rotate_b(t_stack **b);
-void	r_rotate_ab(t_stack **a, t_stack **b);
+void    sa(t_stack **a);
+void    sb(t_stack **b);
+void    ss(t_stack **a, t_stack **b);
+void    pa(t_stack **b, t_stack **a);
+void    pb(t_stack **a, t_stack **b);
+void    ra(t_stack **a);
+void    rb(t_stack **b);
+void    rr(t_stack **a, t_stack **b);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+
+/* algorithms */
+
+void    bubble_sort(t_stack **a, t_stack **b);
+void    radix_sort(t_stack **a, t_stack **b, int n);
+int stack_size(t_stack *a);
+void    free_stack(t_stack *stack);
+
+
 
 
 

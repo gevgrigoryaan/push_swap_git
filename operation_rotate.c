@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 18:22:52 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/24 17:03:20 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/02/26 20:22:03 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ static void    rotate(t_stack **head)
 {
     t_stack *tmp;
 
+    if (!(*head) || !(*head)->next)
+        return ;
     tmp = (*head);
     while (tmp->next)
         tmp = tmp->next;
@@ -24,19 +26,19 @@ static void    rotate(t_stack **head)
     tmp->next->next = NULL;
 }
 
-void    rotate_a(t_stack **a)
+void    ra(t_stack **a)
 {
     rotate(a);
     write(1, "ra\n", 3);
 }
 
-void    rotate_b(t_stack **b)
+void    rb(t_stack **b)
 {
     rotate(b);
     write(1, "rb\n", 3);
 }
 
-void    rotate_ab(t_stack **a, t_stack **b)
+void    rr(t_stack **a, t_stack **b)
 {
     rotate(a);
     rotate(b);
