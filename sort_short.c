@@ -6,18 +6,18 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 18:06:15 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/01 18:28:57 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/02 20:08:04 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    sort_two(t_stack **a)
+void    sort_two(t_stack **a, t_count *count)
 {
-    sa(a);
+    sa(a, count);
 }
 
-void    sort_three(t_stack **a)
+void    sort_three(t_stack **a, t_count *count)
 {
     t_stack *tmp;
 
@@ -26,27 +26,27 @@ void    sort_three(t_stack **a)
         return ;
     if (tmp->value < tmp->next->value && tmp->value < tmp->next->next->value)
 	{
-		rra(a);
-		sa(a);
+		rra(a, count);
+		sa(a, count);
 		return ;
 	}
 	else if (tmp->value > tmp->next->value && tmp->value > tmp->next->next->value)
 	{
-		ra(a);
+		ra(a, count);
 		tmp = *a;
 		if (tmp->value > tmp->next->value)
-			sa(a);
+			sa(a, count);
 	}
 	else
 	{
 		if (tmp->next->value > tmp->next->next->value)
-			rra(a);
+			rra(a, count);
 		else
-			sa(a);
+			sa(a, count);
 	}
 }
 
-void    sort_five(t_stack **a, t_stack **b)
+void    sort_five(t_stack **a, t_stack **b, t_count *count)
 {
     int	pivot;
 	int	i;
@@ -60,15 +60,15 @@ void    sort_five(t_stack **a, t_stack **b)
 		if (!tmp)
 			break;
 		if (tmp->value < pivot)
-			pb(a, b);
+			pb(a, b, count);
 		else
-			ra(a);
+			ra(a, count);
 		i++;
 	}
 	tmp = *b;
 	if (tmp && tmp->next && tmp->value > tmp->next->value)
-		sb(b);
-	sort_three(a);
-	pa(a, b);
-	pa(a, b);
+		sb(b, count);
+	sort_three(a, count);
+	pa(a, b, count);
+	pa(a, b, count);
 }

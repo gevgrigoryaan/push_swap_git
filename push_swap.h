@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/02 18:02:28 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/02 20:07:59 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include "libft/libft.h"
-# include <limits.h>   
 
 # define SIMPLE 1
 # define MEDIUM 2
@@ -26,6 +25,9 @@
 # define ADAPTIVE 4
 # define ON 1
 # define OFF 0
+
+# define INT_MIN -2147483648
+# define INT_MAX 2147482647
 
 typedef struct s_stack
 {
@@ -40,28 +42,43 @@ typedef struct s_mode
     int bench;
 }   t_mode;
 
+typedef struct s_count
+{
+    int op_sa;
+    int op_sb;
+    int op_ss;
+    int op_pa;
+    int op_pb;
+    int op_ra;
+    int op_rb;
+    int op_rr;
+    int op_rra;
+    int op_rrb;
+    int op_rrr;
+}   t_count;
+
 /* operations */
 
-void    sa(t_stack **a);
-void    sb(t_stack **b);
-void    ss(t_stack **a, t_stack **b);
-void    pa(t_stack **b, t_stack **a);
-void    pb(t_stack **a, t_stack **b);
-void    ra(t_stack **a);
-void    rb(t_stack **b);
-void    rr(t_stack **a, t_stack **b);
-void	rra(t_stack **a);
-void	rrb(t_stack **b);
-void	rrr(t_stack **a, t_stack **b);
+void    sa(t_stack **a, t_count *count);
+void    sb(t_stack **b, t_count *count);
+void    ss(t_stack **a, t_stack **b, t_count *count);
+void    pa(t_stack **b, t_stack **a, t_count *count);
+void    pb(t_stack **a, t_stack **b, t_count *count);
+void    ra(t_stack **a, t_count *count);
+void    rb(t_stack **b, t_count *count);
+void    rr(t_stack **a, t_stack **b, t_count *count);
+void	rra(t_stack **a, t_count *count);
+void	rrb(t_stack **b, t_count *count);
+void	rrr(t_stack **a, t_stack **b, t_count *count);
 
 /* algorithms */
 
-void    bubble_sort(t_stack **a);
-void    radix_sort(t_stack **a, t_stack **b, int n);
+void    bubble_sort(t_stack **a, t_count *count);
+void    radix_sort(t_stack **a, t_stack **b, int n, t_count *count);
 void    sorter(t_stack **a, t_stack **b, int n, t_mode *mode);
-void    sort_five(t_stack **a, t_stack **b);
-void    sort_three(t_stack **a);
-void    sort_two(t_stack **a);
+void    sort_five(t_stack **a, t_stack **b, t_count *count);
+void    sort_three(t_stack **a, t_count *count);
+void    sort_two(t_stack **a, t_count *count);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/22 18:14:09 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/28 17:15:53 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/02 19:55:56 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,16 @@ static void    push(t_stack **from, t_stack **to)
     *to = tmp;
 }
 
-void    pa(t_stack **a, t_stack **b)
+void    pa(t_stack **a, t_stack **b, t_count *count)
 {
     push(b, a);
     write(1, "pa\n", 3);
+    count->op_pa += 1;
 }
 
-void    pb(t_stack **a, t_stack **b)
+void    pb(t_stack **a, t_stack **b, t_count *count)
 {
     push(a, b);
     write(1, "pb\n", 3);
+    count->op_pb += 1;
 }

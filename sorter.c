@@ -6,18 +6,18 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:11:26 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/02 18:41:43 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/02 20:08:51 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int is_sorted(t_stack **a)
+int is_sorted(t_stack *a)
 {
     t_stack *i;
     t_stack *j;
 
-    i = *a;
+    i = a;
    
     while (i && i->next)
     {
@@ -27,6 +27,27 @@ int is_sorted(t_stack **a)
         i = i->next;
     }
     return (1);
+}
+
+t_count *init_count()
+{
+    t_count *count;
+
+    count = malloc(sizeof(t_count));
+    if (!count)
+        return (NULL);
+    count->op_pa = 0;
+    count->op_pb = 0;
+    count->op_sa = 0;
+    count->op_sb = 0;
+    count->op_ss = 0;
+    count->op_ra = 0;
+    count->op_rb = 0;
+    count->op_rr = 0;
+    count->op_rra = 0;
+    count->op_rrb = 0;
+    count->op_rrr = 0;
+    return (count);
 }
 
 static float   compute_disorder(t_stack **a)
@@ -57,24 +78,25 @@ static float   compute_disorder(t_stack **a)
 void    sorter(t_stack **a, t_stack **b, int n, t_mode *mode)
 {
     float   disorder;
+    t_count count = {0};
     
-    if (is_sorted(a))
+    if (is_sorted(*a))
         return ;
     if (mode->sorter == ADAPTIVE)
     {
         if (n == 2)
         {
-            sort_two(a);
+            sort_two(a, &count);
             return ;
         }
         else if (n == 3)
         {
-            sort_three(a);
+            sort_three(a, &count);
             return ;
         }
         else if (n == 5)
         {
-            sort_five(a, b);
+            sort_five(a, b, &count);
             return ;
         }
         else
@@ -88,19 +110,23 @@ void    sorter(t_stack **a, t_stack **b, int n, t_mode *mode)
                 mode->sorter = COMPLEX;
         }
     }
-    else if (mode->sorter == SIMPLE)
+    if (mode->sorter == SIMPLE)
     {
-        bubble_sort(a);
+        bubble_sort(a, &count);
+        return ;
     }
-    else if (mode->sorter == MEDIUM)
+    if (mode->sorter == MEDIUM)
     {
-        radix_sort(a, b, n);
+        radix_sort(a, b, n, &count);
+        return ;
     }
-    else if (mode->sorter == COMPLEX)
+    if (mode->sorter == COMPLEX)
     {
-        radix_sort(a, b, n);
-        printf("dfdfgds");
+        radix_sort(a, b, n, &count);
+        return ;
     }
     if (mode->bench == ON)
-    {}
+    {
+        //print bench count   
+    }
 }

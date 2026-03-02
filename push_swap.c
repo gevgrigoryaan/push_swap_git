@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:14:39 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/02 18:39:30 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/02 19:59:19 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static t_mode *init_flags()
 {
     t_mode *mode;
     
-    mode = malloc(sizeof *mode);
+    mode = malloc(sizeof(t_mode));
     if (!mode)
         return (NULL);
     mode->sorter = ADAPTIVE;
@@ -39,13 +39,13 @@ static int  check_flags(char *argv, t_mode *mode)
     if (!argv)
         return (0);
 	if (ft_strncmp(argv, "--simple", ft_strlen(argv)) == 0)
-		return (mode->sorter = SIMPLE , SIMPLE);
+		return (mode->sorter = SIMPLE , 1);
 	else if (ft_strncmp(argv, "--medium", 8) == 0)
-		return (mode->sorter = MEDIUM, MEDIUM);
+		return (mode->sorter = MEDIUM, 1);
 	else if (ft_strncmp(argv, "--complex", 9) == 0)
-        return (mode->sorter = COMPLEX, COMPLEX);
+        return (mode->sorter = COMPLEX, 1);
 	else if (ft_strncmp(argv, "--adaptive", 10) == 0)
-		return (mode->sorter = ADAPTIVE, ADAPTIVE);
+		return (mode->sorter = ADAPTIVE, 1);
     else
 	    return (0);
 }
@@ -111,7 +111,7 @@ static int is_valid(char **args, int n)
         {
             if (ft_strncmp(tmp, args[j], 11) == 0)
                 return (0);
-                j++;
+            j++;
         }
         i++;
         
@@ -122,7 +122,7 @@ static int is_valid(char **args, int n)
 int main(int argc, char **argv)
 {
     t_stack *a;
-    t_stack *b = NULL;
+    t_stack *b;
     char **args;
     t_mode *mode;
     int i;
@@ -137,8 +137,8 @@ int main(int argc, char **argv)
         exit_error();
     a = fill_stack_values(args + i);
     b = NULL;
+    free(args);
     int n = stack_size(a);
-    printf("ddd");
     sorter(&a, &b, n, mode);
     free_stack(a);
     free_stack(b);

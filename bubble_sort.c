@@ -6,13 +6,13 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 17:15:08 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/01 16:08:29 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/02 20:08:05 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    bubble_sort(t_stack **a)
+void    bubble_sort(t_stack **a, t_count *count)
 {
     int size;
     int sorted;
@@ -31,10 +31,10 @@ void    bubble_sort(t_stack **a)
                 if ((*a)->value > (*a)->next->value)
                 {
                     sorted = 0;
-                    sa(a);
+                    sa(a, count);
                 }
             }
-            ra(a);
+            ra(a, count);
                 i++;
         }
     }    
