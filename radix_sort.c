@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 17:45:10 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/26 20:42:22 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/02/28 17:15:53 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static t_stack	*dup_stack(t_stack *head)
 		}
 		new_node = new_node->next;
 		new_node->value = current->value;
-		new_node->index = current->index;
+	        new_node->index = current->index;
 		new_node->next = NULL;
 		current = current->next;
 	}
@@ -98,13 +98,14 @@ static void	assign_indices(t_stack *a, int n)
 	}
 	free_stack(sorted);
 }
-
+	
 void	radix_sort(t_stack **a, t_stack **b, int n)
 {
 	int bits;
 	int i;
 
 	bits = 1;
+	assign_indices(*a, n);
 	while (bits <= n - 1)
 	{
 		i = 0;
@@ -116,7 +117,7 @@ void	radix_sort(t_stack **a, t_stack **b, int n)
 				ra(a);
 			i++;
 		}
-		while (!*b)
+		while (*b)
 			pa(a, b);
 		bits = bits << 1;
 	}

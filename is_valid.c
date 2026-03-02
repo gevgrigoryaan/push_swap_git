@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operation_push.c                                   :+:      :+:    :+:   */
+/*   is_valid.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/22 18:14:09 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/28 17:15:53 by gegrigor         ###   ########.fr       */
+/*   Created: 2026/03/02 17:16:53 by gegrigor          #+#    #+#             */
+/*   Updated: 2026/03/02 17:18:36 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void    push(t_stack **from, t_stack **to)
+long	ft_atoi_long(const char *str)
 {
-    t_stack *tmp;
+	int	i;
+	int	s;
+	long	r;
 
-    if (!from || !(*from))
-        return ;
-    tmp = *from;
-    *from = (*from)->next;
-    tmp->next = *to;
-    *to = tmp;
-}
-
-void    pa(t_stack **a, t_stack **b)
-{
-    push(b, a);
-    write(1, "pa\n", 3);
-}
-
-void    pb(t_stack **a, t_stack **b)
-{
-    push(a, b);
-    write(1, "pb\n", 3);
+	i = 0;
+	s = 1;
+	r = 0;
+	while (str[i] == ' ' || str[i] == '\t'
+		|| str[i] == '\n' || str[i] == '\v'
+		|| str[i] == '\f' || str[i] == '\r')
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			s = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		r = r * 10 + str[i] - '0';
+		i++;
+	}
+	r = r * s;
+	return (r);
 }
