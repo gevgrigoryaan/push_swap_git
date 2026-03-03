@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/16 19:14:39 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/02 19:59:19 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/03 17:34:50 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,8 @@ int main(int argc, char **argv)
     char **args;
     t_mode *mode;
     int i;
-
+    t_count *count;
+    
     i = 0;
     if (argc < 2)
         return (0);
@@ -139,7 +140,9 @@ int main(int argc, char **argv)
     b = NULL;
     free(args);
     int n = stack_size(a);
-    sorter(&a, &b, n, mode);
+    count = init_count();
+    sorter(&a, &b, n, mode, count);
+    free(count);
     free_stack(a);
     free_stack(b);
     // printf("%i\n", mode->sorter);

@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/02 20:07:59 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/03 17:33:20 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdio.h>
+# include <stdarg.h>
 # include "libft/libft.h"
 
 # define SIMPLE 1
@@ -75,7 +76,7 @@ void	rrr(t_stack **a, t_stack **b, t_count *count);
 
 void    bubble_sort(t_stack **a, t_count *count);
 void    radix_sort(t_stack **a, t_stack **b, int n, t_count *count);
-void    sorter(t_stack **a, t_stack **b, int n, t_mode *mode);
+void    sorter(t_stack **a, t_stack **b, int n, t_mode *mode, t_count *count);
 void    sort_five(t_stack **a, t_stack **b, t_count *count);
 void    sort_three(t_stack **a, t_count *count);
 void    sort_two(t_stack **a, t_count *count);
@@ -96,6 +97,17 @@ int	    get_min(t_stack **a);
 int     get_median(t_stack **a);
 long	ft_atoi_long(const char *str);
 char    *ft_strtrim_free(char *s1, char *set);
+t_count *init_count(void);
+
+
+int	ft_printf(char const *formar, ...);
+int	ft_putchar(char c);
+int	ft_putnbr(long nb);
+int	ft_putnbr_hexa(unsigned long nbr, char up);
+int	ft_putptr(void *p);
+int	ft_putstr(char *s);
+
+
 
 
 
