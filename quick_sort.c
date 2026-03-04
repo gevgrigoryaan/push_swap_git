@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:12:49 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:13:21 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:17:36 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ int	get_min(t_stack **a)
 
 int	get_median(t_stack **a)
 {
-	int max;
-	int min;
+	int	max;
+	int	min;
 
 	max = get_max(a);
 	min = get_min(a);

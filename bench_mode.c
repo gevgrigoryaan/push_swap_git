@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:04:56 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:11:51 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:17:15 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count)
 		+ count->op_pb + count->op_ra + count->op_rb + count->op_rr
 		+ count->op_rra + count->op_rrb + count->op_rrr;
 	ft_printf("[bench] disorder:    %d.%d%%\n"
-        "[bench] strategy:  %s / %s\n"
-        "[bench] total ops:  %d\n"
-        "[bench] sa: %i  sb: %i  ss: %i  pa:    %i  pb: %i\n"
-        "[bench] ra: %i  rb: %i  rr: %i  "
-        "rra:    %i  rrb:   %i  rrr:   %i\n",
-        dis_i, dis_p, strategy[real_mode], strategy[mode->sorter + 4],
-        sum, count->op_sa, count->op_sb, count->op_ss, count->op_pa,
-        count->op_pb, count->op_ra, count->op_rb, count->op_rr,
-        count->op_rra, count->op_rrb, count->op_rrr);
+		"[bench] strategy:  %s / %s\n"
+		"[bench] total ops:  %d\n"
+		"[bench] sa: %i  sb: %i  ss: %i  pa:    %i  pb: %i\n"
+		"[bench] ra: %i  rb: %i  rr: %i  "
+		"rra:    %i  rrb:   %i  rrr:   %i\n",
+		dis_i, dis_p, strategy[real_mode], strategy[mode->sorter + 4],
+		sum, count->op_sa, count->op_sb, count->op_ss, count->op_pa,
+		count->op_pb, count->op_ra, count->op_rb, count->op_rr,
+		count->op_rra, count->op_rrb, count->op_rrr);
 	free(count);
 }

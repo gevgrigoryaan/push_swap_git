@@ -6,13 +6,11 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 18:31:04 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:13:52 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:18:05 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 void	stack_add_bottom(t_stack **stack, t_stack *new)
 {
@@ -54,6 +52,7 @@ t_stack	*fill_stack_values(char **args)
 	}
 	return (stack_a);
 }
+
 char	*ft_strjoin_free(char *s1, char *s2)
 {
 	char	*p;
