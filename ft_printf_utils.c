@@ -19,9 +19,9 @@ int	ft_putchar(char c)
 
 int	ft_putnbr(long nb)
 {
-	long		num;
-	int			len;
-	int			check;
+	long	num;
+	int		len;
+	int		check;
 
 	len = 0;
 	if (nb < 0)
@@ -94,7 +94,7 @@ int	ft_putstr(char *s)
 
 	if (!s)
 	{
-		if (write (2, "(null)", 6) == -1)
+		if (write(2, "(null)", 6) == -1)
 			return (-1);
 		return (6);
 	}

@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/03 17:33:20 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/04 19:07:23 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_mode
     int bench;
 }   t_mode;
 
+/*  for bench mode  */
+
 typedef struct s_count
 {
     int op_sa;
@@ -76,19 +78,19 @@ void	rrr(t_stack **a, t_stack **b, t_count *count);
 
 void    bubble_sort(t_stack **a, t_count *count);
 void    radix_sort(t_stack **a, t_stack **b, int n, t_count *count);
-void    sorter(t_stack **a, t_stack **b, int n, t_mode *mode, t_count *count);
+void    sorter(t_stack **a, t_stack **b, int n, t_mode *mode);
 void    sort_five(t_stack **a, t_stack **b, t_count *count);
 void    sort_three(t_stack **a, t_count *count);
 void    sort_two(t_stack **a, t_count *count);
 
-
+/*  stack utils  */
 
 int     stack_size(t_stack *a);
 void    free_stack(t_stack *stack);
 void    exit_error(void);
 char    **get_args(int argc, char **argv);
 char    *ft_strjoin_free(char *s1, char *s2);
-t_stack	*fill_stack_values(char **args);
+t_stack *fill_stack_values(char **args);
 void	stack_add_bottom(t_stack **stack, t_stack *new);
 t_stack	*get_stack_bottom(t_stack *stack);
 t_stack	*stack_new(int value);
@@ -98,8 +100,22 @@ int     get_median(t_stack **a);
 long	ft_atoi_long(const char *str);
 char    *ft_strtrim_free(char *s1, char *set);
 t_count *init_count(void);
+void give_indices(t_stack *a, t_stack *sorted);
+int	find_position_in_sorted(int value, t_stack *sorted);
+t_stack	*dup_stack(t_stack *head);
+void	bubble_sort_stack(t_stack *sorted, int n);
+void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count);
 
 
+/*  validation checkers  */
+
+t_mode	*init_flags(void);
+int	check_bench(char *args, t_mode *mode);
+int	check_flags(char *argv, t_mode *mode);
+int	flags(char **args, t_mode *mode);
+int	is_valid(char **args, int n);
+
+/* ft_printf */
 int	ft_printf(char const *formar, ...);
 int	ft_putchar(char c);
 int	ft_putnbr(long nb);
