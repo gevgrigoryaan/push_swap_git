@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 18:31:04 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:18:05 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/05 17:33:28 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_stack	*fill_stack_values(char **args)
 	i = 0;
 	while (args[i])
 	{
-		if (ft_strlen(args[i]) > 10)
+		if (ft_strlen(args[i]) > 11)
 			exit_error();
 		nb = ft_atoi_long(args[i]);
 		free(args[i]);

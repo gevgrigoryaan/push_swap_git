@@ -6,11 +6,11 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:38:14 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/03 17:40:02 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/05 20:41:49 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static int	ft_conversion(const char type, va_list *args)
 {

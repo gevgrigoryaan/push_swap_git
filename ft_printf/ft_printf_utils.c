@@ -6,11 +6,11 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:38:38 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/03 17:27:21 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/05 20:41:40 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 int	ft_putchar(char c)
 {

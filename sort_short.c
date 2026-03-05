@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 18:06:15 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 18:41:41 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/04 20:21:38 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 void	sort_two(t_stack **a, t_count *count)
 {
-	sa(a, count);
+	if ((*a)->value > (*a)->next->value)
+		sa(a, count);
 }
 
 void	sort_three(t_stack **a, t_count *count)
@@ -48,7 +49,7 @@ void	sort_five(t_stack **a, t_stack **b, t_count *count)
 	int		i;
 	t_stack	*tmp;
 
-	pivot = get_median(a);
+	pivot = get_median(a, 5);
 	i = 0;
 	while (i < 5)
 	{

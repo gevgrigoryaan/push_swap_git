@@ -1,55 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   operation_rotate_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/03/04 19:12:49 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:17:36 by gegrigor         ###   ########.fr       */
+/*   Created: 2026/02/22 18:22:52 by gegrigor          #+#    #+#             */
+/*   Updated: 2026/03/05 20:14:13 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	get_max(t_stack **a)
+static void	rotate(t_stack **head)
 {
-	int		max;
 	t_stack	*tmp;
 
-	tmp = *a;
-	max = tmp->value;
-	while (tmp)
-	{
-		if (tmp->value > max)
-			max = tmp->value;
+	if (!(*head) || !(*head)->next)
+		return ;
+	tmp = (*head);
+	while (tmp->next)
 		tmp = tmp->next;
-	}
-	return (max);
+	tmp->next = (*head);
+	(*head) = (*head)->next;
+	tmp->next->next = NULL;
 }
 
-int	get_min(t_stack **a)
+void	ra_bonus(t_stack **a)
 {
-	int		min;
-	t_stack	*tmp;
-
-	tmp = *a;
-	min = tmp->value;
-	while (tmp)
-	{
-		if (tmp->value < min)
-			min = tmp->value;
-		tmp = tmp->next;
-	}
-	return (min);
+	rotate(a);
 }
 
-int	get_median(t_stack **a)
+void	rb_bonus(t_stack **b)
 {
-	int	max;
-	int	min;
+	rotate(b);
+}
 
-	max = get_max(a);
-	min = get_min(a);
-	return (min + (max - min) / 2);
+void	rr_bonus(t_stack **a, t_stack **b)
+{
+	rotate(a);
+	rotate(b);
 }

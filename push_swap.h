@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:25:53 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 00:05:01 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_stack
 
 typedef struct s_mode
 {
-	int	sorzter;
+	int	sorter;
 	int	bench;
 }	t_mode;
 
@@ -73,9 +73,24 @@ void	rra(t_stack **a, t_count *count);
 void	rrb(t_stack **b, t_count *count);
 void	rrr(t_stack **a, t_stack **b, t_count *count);
 
+/*  checker operations  */
+
+void	sa_bonus(t_stack **a);
+void	sb_bonus(t_stack **b);
+void	ss_bonus(t_stack **a, t_stack **b);
+void	pa_bonus(t_stack **b, t_stack **a);
+void	pb_bonus(t_stack **a, t_stack **b);
+void	ra_bonus(t_stack **a);
+void	rb_bonus(t_stack **b);
+void	rr_bonus(t_stack **a, t_stack **b);
+void	rra_bonus(t_stack **a);
+void	rrb_bonus(t_stack **b);
+void	rrr_bonus(t_stack **a, t_stack **b);
+
 /* algorithms */
 
 void	bubble_sort(t_stack **a, t_count *count);
+void	chunk_sort(t_stack **a, t_stack **b, int n, t_count *count);
 void	radix_sort(t_stack **a, t_stack **b, int n, t_count *count);
 void	sorter(t_stack **a, t_stack **b, int n, t_mode *mode);
 void	sort_five(t_stack **a, t_stack **b, t_count *count);
@@ -93,9 +108,9 @@ t_stack	*fill_stack_values(char **args);
 void	stack_add_bottom(t_stack **stack, t_stack *new);
 t_stack	*get_stack_bottom(t_stack *stack);
 t_stack	*stack_new(int value);
-int		get_max(t_stack **a);
-int		get_min(t_stack **a);
-int		get_median(t_stack **a);
+int		get_max(t_stack *a, int n);
+int		get_min(t_stack *a, int n);
+int		get_median(t_stack **a, int n);
 long	ft_atoi_long(const char *str);
 char	*ft_strtrim_free(char *s1, char *set);
 t_count	*init_count(void);
@@ -104,6 +119,7 @@ int		find_position_in_sorted(int value, t_stack *sorted);
 t_stack	*dup_stack(t_stack *head);
 void	bubble_sort_stack(t_stack *sorted, int n);
 void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count);
+int		is_sorted(t_stack *a);
 
 /*  validation checkers  */
 

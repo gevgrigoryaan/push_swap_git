@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:11:26 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:08:19 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/05 23:50:33 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ void	sorter(t_stack **a, t_stack **b, int n, t_mode *mode)
 	if (mode->sorter == SIMPLE)
 		bubble_sort(a, count);
 	if (mode->sorter == MEDIUM)
-		radix_sort(a, b, n, count);
+		chunk_sort(a, b, n, count);
 	if (mode->sorter == COMPLEX)
 		radix_sort(a, b, n, count);
 	if (mode->bench == ON)
