@@ -20,7 +20,7 @@ STACK_UTILS = bench_mode.c bubble_sort.c chunk_sort.c flag_utils.c is_valid.c ra
 STACK_UTILS_OBJS = $(STACK_UTILS:.c=.o)
 
 CHECKER_UTILS = flag_utils.c is_valid.c stack_utils.c stack_utils2.c \
-				sort_short.c max_min.c 
+				 max_min.c 
 
 CHECKER_UTILS_OBJS = $(CHECKER_UTILS:.c=.o)
 

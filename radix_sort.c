@@ -6,13 +6,13 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 17:45:10 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 18:36:28 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 00:09:37 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	assign_indices(t_stack *a, int n)
+void	assign_indices(t_stack *a, int n)
 {
 	t_stack	*sorted;
 

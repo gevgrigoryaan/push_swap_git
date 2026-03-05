@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:11:26 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/05 23:50:33 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 00:25:57 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,6 +104,8 @@ void	sorter(t_stack **a, t_stack **b, int n, t_mode *mode)
 	int		real_mode;
 	t_count	*count;
 
+	if (!(*a)->next)
+		exit_error();
 	if (is_sorted(*a))
 		return ;
 	count = init_count();

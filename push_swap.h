@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/06 00:05:01 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 00:09:47 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,7 @@ t_stack	*dup_stack(t_stack *head);
 void	bubble_sort_stack(t_stack *sorted, int n);
 void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count);
 int		is_sorted(t_stack *a);
+void	assign_indices(t_stack *a, int n);
 
 /*  validation checkers  */
 
