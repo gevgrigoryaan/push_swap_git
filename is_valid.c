@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/02 17:16:53 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/05 21:14:23 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 11:06:10 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	is_nbr(char **args)
 	i = 0;
 	while (args[i])
 	{
-		if (args[i][0] == '-' && args[i][1] == '0')
+		if (args[i][0] == '-' && ft_atoi_long(args[i]) == 0)
 			args[i] = ft_strtrim_free(args[i], "-");
 		j = 0;
 		if (args[i][j] == '+' || args[i][j] == '-')

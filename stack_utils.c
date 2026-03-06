@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/25 18:31:04 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/05 17:33:28 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 14:38:54 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ t_stack	*fill_stack_values(char **args)
 			stack_add_bottom(&stack_a, stack_new((int)nb));
 		i++;
 	}
+	check_dups(stack_a);
 	return (stack_a);
 }
 

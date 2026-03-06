@@ -15,12 +15,11 @@ PUSH_SWAP_MAIN = push_swap.c
 CHECKER_MAIN = checker.c
 
 STACK_UTILS = bench_mode.c bubble_sort.c chunk_sort.c flag_utils.c is_valid.c radix_sort.c stack_utils.c \
-				radix_sort_utils.c sort_short.c sorter.c stack_utils2.c max_min.c
+				radix_sort_utils.c sort_short.c sorter.c stack_utils2.c max_min.c check_dups.c
 
 STACK_UTILS_OBJS = $(STACK_UTILS:.c=.o)
 
-CHECKER_UTILS = flag_utils.c is_valid.c stack_utils.c stack_utils2.c \
-				 max_min.c 
+CHECKER_UTILS = flag_utils.c is_valid.c stack_utils.c stack_utils2.c check_dups.c
 
 CHECKER_UTILS_OBJS = $(CHECKER_UTILS:.c=.o)
 
