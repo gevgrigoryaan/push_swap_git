@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/06 14:39:54 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 18:27:23 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # define OFF 0
 
 # define INT_MIN -2147483648
-# define INT_MAX 2147482647
+# define INT_MAX 2147483647
 
 typedef struct s_stack
 {
@@ -110,6 +110,7 @@ t_stack	*get_stack_bottom(t_stack *stack);
 t_stack	*stack_new(int value);
 int		get_max(t_stack *a, int n);
 int		get_min(t_stack *a, int n);
+int		get_2nd_min(t_stack *a, int n);
 int		get_median(t_stack **a, int n);
 long	ft_atoi_long(const char *str);
 char	*ft_strtrim_free(char *s1, char *set);

@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 18:30:49 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 18:32:00 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 16:40:18 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	check_bench(char *args, t_mode *mode)
 {
 	if (!args)
 		return (0);
-	if (ft_strncmp(args, "--bench", 7) == 0)
+	if (ft_strncmp(args, "--bench", 7) == 0 && ft_strlen(args) == 7)
 		return (mode->bench = ON, 1);
 	return (0);
 }
@@ -37,13 +37,13 @@ int	check_flags(char *argv, t_mode *mode)
 {
 	if (!argv)
 		return (0);
-	if (ft_strncmp(argv, "--simple", ft_strlen(argv)) == 0)
+	if (ft_strncmp(argv, "--simple", 8) == 0 && ft_strlen(argv) == 8)
 		return (mode->sorter = SIMPLE, 1);
-	else if (ft_strncmp(argv, "--medium", 8) == 0)
+	else if (ft_strncmp(argv, "--medium", 8) == 0 && ft_strlen(argv) == 8)
 		return (mode->sorter = MEDIUM, 1);
-	else if (ft_strncmp(argv, "--complex", 9) == 0)
+	else if (ft_strncmp(argv, "--complex", 9) == 0 && ft_strlen(argv) == 9)
 		return (mode->sorter = COMPLEX, 1);
-	else if (ft_strncmp(argv, "--adaptive", 10) == 0)
+	else if (ft_strncmp(argv, "--adaptive", 10) == 0 && ft_strlen(argv) == 10)
 		return (mode->sorter = ADAPTIVE, 1);
 	else
 		return (0);

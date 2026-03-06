@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:04:56 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 19:17:15 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 17:55:48 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	init_strategy(char **strategy)
 	strategy[5] = "O(n²)";
 	strategy[6] = "O(n√n)";
 	strategy[7] = "O(nlog(n))";
+	strategy[8] = "O(n²)";
 }
 
 void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count)
@@ -29,7 +30,7 @@ void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count)
 	int		sum;
 	int		dis_i;
 	int		dis_p;
-	char	*strategy[8];
+	char	*strategy[9];
 
 	init_strategy(strategy);
 	dis_i = (int)(disorder * 100);

@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:11:26 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/06 14:45:48 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 17:52:13 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,23 +77,23 @@ static float	compute_disorder(t_stack **a)
 void	adaptive_mode(t_stack **a, t_count *count, float disorder, t_mode *mode)
 {
 	int		n;
-	t_stack	**b;
+	t_stack	*b_stack;
 
-	b = NULL;
+	b_stack = NULL;
 	n = stack_size(*a);
 	if (n == 2)
 		sort_two(a, count);
 	else if (n == 3)
 		sort_three(a, count);
 	else if (n == 5)
-		sort_five(a, b, count);
+		sort_five(a, &b_stack, count);
 	else
 	{
 		if (disorder < 0.2)
 			mode->sorter = SIMPLE;
 		else if (disorder >= 0.2 && disorder < 0.5)
 			mode->sorter = MEDIUM;
-		else
+		else if (disorder >= 0.5)
 			mode->sorter = COMPLEX;
 	}
 }

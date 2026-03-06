@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 18:06:15 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/04 20:21:38 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/06 18:28:19 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,25 +45,27 @@ void	sort_three(t_stack **a, t_count *count)
 
 void	sort_five(t_stack **a, t_stack **b, t_count *count)
 {
-	int		pivot;
 	int		i;
 	t_stack	*tmp;
+	int		min;
+	int		min_2nd;
 
-	pivot = get_median(a, 5);
 	i = 0;
+	min = get_min(*a, 5);
+	min_2nd = get_2nd_min(*a, 5);
 	while (i < 5)
 	{
 		tmp = *a;
 		if (!tmp)
 			break ;
-		if (tmp->value < pivot)
+		if (tmp->value == min || tmp->value == min_2nd)
 			pb(a, b, count);
 		else
 			ra(a, count);
 		i++;
 	}
 	tmp = *b;
-	if (tmp && tmp->next && tmp->value > tmp->next->value)
+	if (tmp && tmp->next && tmp->value < tmp->next->value)
 		sb(b, count);
 	sort_three(a, count);
 	pa(a, b, count);
