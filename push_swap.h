@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/06 18:27:23 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/07 12:48:50 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void	give_indices(t_stack *a, t_stack *sorted);
 int		find_position_in_sorted(int value, t_stack *sorted);
 t_stack	*dup_stack(t_stack *head);
 void	bubble_sort_stack(t_stack *sorted, int n);
-void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count);
+void	bench_mode(float disorder, int real_mode, t_count *count, t_mode *mode);
 int		is_sorted(t_stack *a);
 void	assign_indices(t_stack *a, int n);
 void	check_dups(t_stack *a);

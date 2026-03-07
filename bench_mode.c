@@ -6,11 +6,23 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:04:56 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/06 17:55:48 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/07 12:48:24 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static int	complexity(float disorder, t_mode *mode)
+{
+	if (disorder < 0.2 && mode->sorter == ADAPTIVE)
+		return (5);
+	else if (disorder >= 0.2 && disorder <0.5 && mode->sorter == ADAPTIVE)
+		return (6);
+	else if (disorder >= 0.5 && mode->sorter == ADAPTIVE)
+		return (7);
+	else 
+		return (mode->sorter + 4);
+}
 
 void	init_strategy(char **strategy)
 {
@@ -22,15 +34,14 @@ void	init_strategy(char **strategy)
 	strategy[5] = "O(n²)";
 	strategy[6] = "O(n√n)";
 	strategy[7] = "O(nlog(n))";
-	strategy[8] = "O(n²)";
 }
 
-void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count)
+void	bench_mode(float disorder, int real_mode, t_count *count, t_mode *mode)
 {
 	int		sum;
 	int		dis_i;
 	int		dis_p;
-	char	*strategy[9];
+	char	*strategy[8];
 
 	init_strategy(strategy);
 	dis_i = (int)(disorder * 100);
@@ -44,7 +55,7 @@ void	bench_mode(float disorder, t_mode *mode, int real_mode, t_count *count)
 		"[bench] sa: %i  sb: %i  ss: %i  pa:    %i  pb: %i\n"
 		"[bench] ra: %i  rb: %i  rr: %i  "
 		"rra:    %i  rrb:   %i  rrr:   %i\n",
-		dis_i, dis_p, strategy[real_mode], strategy[mode->sorter + 4],
+		dis_i, dis_p, strategy[real_mode], strategy[complexity(disorder, mode)],
 		sum, count->op_sa, count->op_sb, count->op_ss, count->op_pa,
 		count->op_pb, count->op_ra, count->op_rb, count->op_rr,
 		count->op_rra, count->op_rrb, count->op_rrr);

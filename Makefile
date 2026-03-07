@@ -4,7 +4,7 @@ CHECKER = checker
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -g -fsanitize=address
 
 LIBFT_DIR = libft
 

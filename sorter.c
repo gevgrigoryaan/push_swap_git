@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:11:26 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/06 17:52:13 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/07 12:52:29 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,5 +120,5 @@ void	sorter(t_stack **a, t_stack **b, int n, t_mode *mode)
 	if (mode->sorter == COMPLEX)
 		radix_sort(a, b, n, count);
 	if (mode->bench == ON)
-		bench_mode(disorder, mode, real_mode, count);
+		bench_mode(disorder, real_mode, count, mode);
 }
