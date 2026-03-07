@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:04:56 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/07 12:48:24 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/07 23:04:31 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@ static int	complexity(float disorder, t_mode *mode)
 {
 	if (disorder < 0.2 && mode->sorter == ADAPTIVE)
 		return (5);
-	else if (disorder >= 0.2 && disorder <0.5 && mode->sorter == ADAPTIVE)
+	else if (disorder >= 0.2 && disorder < 0.5 && mode->sorter == ADAPTIVE)
 		return (6);
 	else if (disorder >= 0.5 && mode->sorter == ADAPTIVE)
 		return (7);
-	else 
+	else
 		return (mode->sorter + 4);
 }
 
