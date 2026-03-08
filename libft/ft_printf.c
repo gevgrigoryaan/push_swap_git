@@ -6,28 +6,28 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:38:14 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/05 20:41:49 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/08 17:27:34 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
 static int	ft_conversion(const char type, va_list *args)
 {
 	if (type == 'c')
-		return (ft_putchar(va_arg(*args, int)));
+		return (ft_putchar_p(va_arg(*args, int)));
 	else if (type == 'u')
-		return (ft_putnbr(va_arg(*args, unsigned int)));
+		return (ft_putnbr_p(va_arg(*args, unsigned int)));
 	else if ((type == 'i') || (type == 'd'))
-		return (ft_putnbr(va_arg(*args, int)));
+		return (ft_putnbr_p(va_arg(*args, int)));
 	else if (type == 's')
-		return (ft_putstr(va_arg(*args, char *)));
+		return (ft_putstr_p(va_arg(*args, char *)));
 	else if (type == 'x' || type == 'X')
-		return (ft_putnbr_hexa(va_arg(*args, unsigned int), type));
+		return (ft_putnbr_hexa_p(va_arg(*args, unsigned int), type));
 	else if (type == 'p')
-		return (ft_putptr(va_arg(*args, void *)));
+		return (ft_putptr_p(va_arg(*args, void *)));
 	else if (type == '%')
-		return (ft_putchar('%'));
+		return (ft_putchar_p('%'));
 	return (-1);
 }
 

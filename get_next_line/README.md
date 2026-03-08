@@ -1,4 +1,4 @@
-*This project has been created as part of the 42 curriculum by <gegrigor>.*
+*This project has been created as part of the 42 curriculum by <gegrigor>, <rafhovha>.*
 
 # get_next_line
 

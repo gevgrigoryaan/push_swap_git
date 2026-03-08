@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/07 12:48:50 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/08 17:28:04 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,12 +132,5 @@ int		check_flags(char *argv, t_mode *mode);
 int		flags(char **args, t_mode *mode);
 int		is_valid(char **args, int n);
 
-/* ft_printf */
-int		ft_printf(char const *formar, ...);
-int		ft_putchar(char c);
-int		ft_putnbr(long nb);
-int		ft_putnbr_hexa(unsigned long nbr, char up);
-int		ft_putptr(void *p);
-int		ft_putstr(char *s);
 
 #endif

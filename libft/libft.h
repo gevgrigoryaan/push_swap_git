@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gegrigor <gegrigor@student.42yerevan.am>   +#+  +:+       +#+        */
+/*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/27 16:23:55 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/02/12 13:58:46 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/08 17:36:12 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
@@ -60,6 +61,14 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+
+/* printf */
+int		ft_printf(char const *format, ...);
+int		ft_putchar_p(char c);
+int		ft_putnbr_p(long nb);
+int		ft_putnbr_hexa_p(unsigned long nbr, char up);
+int		ft_putptr_p(void *p);
+int		ft_putstr_p(char *s);
 
 /* bonus */
 t_list	*ft_lstnew(void *content);

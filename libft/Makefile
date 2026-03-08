@@ -42,7 +42,9 @@ SOURCES = \
 	ft_lstdelone.c \
 	ft_lstclear.c \
 	ft_lstiter.c \
-	ft_lstmap.c
+	ft_lstmap.c \
+	ft_printf.c \
+	ft_printf_utils.c \
 
 OBJECTS = $(SOURCES:.c=.o)
 

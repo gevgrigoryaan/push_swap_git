@@ -6,18 +6,18 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/12 18:38:38 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/05 20:41:40 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/08 17:31:43 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-int	ft_putchar(char c)
+int	ft_putchar_p(char c)
 {
 	return (write(2, &c, 1));
 }
 
-int	ft_putnbr(long nb)
+int	ft_putnbr_p(long nb)
 {
 	long	num;
 	int		len;
@@ -34,7 +34,7 @@ int	ft_putnbr(long nb)
 	num = nb % 10 + '0';
 	if (nb >= 10)
 	{
-		check = ft_putnbr(nb / 10);
+		check = ft_putnbr_p(nb / 10);
 		if (check == -1)
 			return (-1);
 		len += check;
@@ -45,7 +45,7 @@ int	ft_putnbr(long nb)
 	return (len);
 }
 
-int	ft_putnbr_hexa(unsigned long nbr, char up)
+int	ft_putnbr_hexa_p(unsigned long nbr, char up)
 {
 	int		len;
 	char	*base;
@@ -58,7 +58,7 @@ int	ft_putnbr_hexa(unsigned long nbr, char up)
 		base = "0123456789abcdef";
 	if (nbr > 15)
 	{
-		check = ft_putnbr_hexa((nbr / 16), up);
+		check = ft_putnbr_hexa_p((nbr / 16), up);
 		if (check == -1)
 			return (-1);
 		len += check;
@@ -69,7 +69,7 @@ int	ft_putnbr_hexa(unsigned long nbr, char up)
 	return (len);
 }
 
-int	ft_putptr(void *p)
+int	ft_putptr_p(void *p)
 {
 	int	len;
 	int	check;
@@ -78,17 +78,17 @@ int	ft_putptr(void *p)
 	check = 0;
 	if (p == NULL)
 		return (write(2, "(nil)", 5), 5);
-	if (ft_putstr("0x") == -1)
+	if (ft_putstr_p("0x") == -1)
 		return (-1);
 	len += 2;
-	check = ft_putnbr_hexa((unsigned long)p, 'x');
+	check = ft_putnbr_hexa_p((unsigned long)p, 'x');
 	if (check == -1)
 		return (-1);
 	len += check;
 	return (len);
 }
 
-int	ft_putstr(char *s)
+int	ft_putstr_p(char *s)
 {
 	int	len;
 

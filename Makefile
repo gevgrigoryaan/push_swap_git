@@ -29,25 +29,21 @@ OPERATIONS_BONUS = operation_push_bonus.c operation_rotate_bonus.c operation_r_r
 
 GNL = get_next_line/get_next_line.c get_next_line/get_next_line_utils.c
 
-PRINTF = ft_printf/ft_printf.c ft_printf/ft_printf_utils.c
-
 MAIN_OBJS = $(PUSH_SWAP_MAIN:.c=.o) $(STACK_UTILS_OBJS) $(OPERATIONS:.c=.o)
 
 CHECKER_OBJS = $(CHECKER_MAIN:.c=.o) $(CHECKER_UTILS_OBJS) $(OPERATIONS_BONUS:.c=.o)
 
 GNL_OBJS = $(GNL:.c=.o)
 
-PRINTF_OBJS = $(PRINTF:.c=.o)
-
 all: $(NAME)
 
-$(NAME): $(MAIN_OBJS) $(PRINTF_OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(MAIN_OBJS) $(PRINTF_OBJS) $(LIBFT) -o $(NAME)
+$(NAME): $(MAIN_OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(MAIN_OBJS) $(LIBFT) -o $(NAME)
 
 bonus: $(CHECKER)
 
-$(CHECKER): $(CHECKER_OBJS) $(GNL_OBJS) $(PRINTF_OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(CHECKER_OBJS) $(GNL_OBJS) $(PRINTF_OBJS) $(LIBFT) -o $(CHECKER)
+$(CHECKER): $(CHECKER_OBJS) $(GNL_OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(CHECKER_OBJS) $(GNL_OBJS) $(LIBFT) -o $(CHECKER)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@

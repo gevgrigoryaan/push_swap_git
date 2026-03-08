@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/01 16:11:26 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/07 22:35:53 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/08 17:35:46 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,19 +106,20 @@ void	sorter(t_stack **a, t_stack **b, int n, t_mode *mode)
 
 	if (!*a)
 		exit(0);
-	if (is_sorted(*a))
-		return ;
 	count = init_count();
 	disorder = compute_disorder(a);
 	real_mode = mode->sorter;
-	if (mode->sorter == ADAPTIVE)
-		adaptive_mode(a, count, disorder, mode);
-	if (mode->sorter == SIMPLE)
-		bubble_sort(a, count);
-	if (mode->sorter == MEDIUM)
-		chunk_sort(a, b, n, count);
-	if (mode->sorter == COMPLEX)
-		radix_sort(a, b, n, count);
+	if (!is_sorted(*a))
+	{
+		if (mode->sorter == ADAPTIVE)
+			adaptive_mode(a, count, disorder, mode);
+		if (mode->sorter == SIMPLE)
+			bubble_sort(a, count);
+		if (mode->sorter == MEDIUM)
+			chunk_sort(a, b, n, count);
+		if (mode->sorter == COMPLEX)
+			radix_sort(a, b, n, count);
+	}
 	if (mode->bench == ON)
 		bench_mode(disorder, real_mode, count, mode);
 }
