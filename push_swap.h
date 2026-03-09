@@ -6,7 +6,7 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/17 16:48:02 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/08 17:28:04 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/09 13:07:19 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,10 +108,8 @@ t_stack	*fill_stack_values(char **args);
 void	stack_add_bottom(t_stack **stack, t_stack *new);
 t_stack	*get_stack_bottom(t_stack *stack);
 t_stack	*stack_new(int value);
-int		get_max(t_stack *a, int n);
 int		get_min(t_stack *a, int n);
 int		get_2nd_min(t_stack *a, int n);
-int		get_median(t_stack **a, int n);
 long	ft_atoi_long(const char *str);
 char	*ft_strtrim_free(char *s1, char *set);
 t_count	*init_count(void);

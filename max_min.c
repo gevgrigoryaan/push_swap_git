@@ -6,29 +6,11 @@
 /*   By: gegrigor <gevgrigoryaan@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/03/04 19:12:49 by gegrigor          #+#    #+#             */
-/*   Updated: 2026/03/06 18:26:21 by gegrigor         ###   ########.fr       */
+/*   Updated: 2026/03/09 13:06:54 by gegrigor         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	get_max(t_stack *a, int n)
-{
-	int	max;
-	int	i;
-
-	i = 1;
-	max = a->value;
-	a = a->next;
-	while (i < n)
-	{
-		if (a->value > max)
-			max = a->value;
-		a = a->next;
-		i++;
-	}
-	return (max);
-}
 
 int	get_2nd_min(t_stack *a, int n)
 {
@@ -68,16 +50,6 @@ int	get_min(t_stack *a, int n)
 		i++;
 	}
 	return (min);
-}
-
-int	get_median(t_stack **a, int n)
-{
-	int	max;
-	int	min;
-
-	max = get_max(*a, n);
-	min = get_min(*a, n);
-	return (min + (max - min) / 2);
 }
 
 /*
